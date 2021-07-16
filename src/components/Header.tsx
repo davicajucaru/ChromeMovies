@@ -2,7 +2,12 @@ import { Input } from "@chakra-ui/react";
 
 import "../styles/header.css";
 
-const Header = () => {
+interface HeaderProps {
+  value: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Header = ({ value, setValue }: HeaderProps) => {
   return (
     <div className="header">
       <div className="header-logo">
@@ -13,7 +18,12 @@ const Header = () => {
         <a href="/">Favorites</a>
       </div>
       <div className="header-input">
-        <Input placeholder="Find your favorite movie by title" />
+        <Input
+          width="260px"
+          placeholder="Find your favorite movie by title"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
       </div>
     </div>
   );

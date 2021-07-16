@@ -11,8 +11,8 @@
 /* Estilizações da logo do header */
 
 .header-logo {
-  color: white;
-  font-size: 1.5rem;
+  color: yellow;
+  font-size: 1.8rem;
 }
 
 /* Estilizações dos links do header */
@@ -21,6 +21,7 @@
   text-decoration: underline;
   font-size: 1.5rem;
   margin-left: 10px;
+  text-decoration-color: yellow;
 }
 
 .header-links a + a {
