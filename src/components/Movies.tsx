@@ -3,6 +3,9 @@ import api from "../services/api";
 
 import "../styles/movies.css";
 
+import notAvailable from "../assets/imagem-nao-disponivel.jpg";
+import { Link } from "react-router-dom";
+
 interface Movie {
   original_title: string;
   id: number;
@@ -33,11 +36,20 @@ const Movies = ({ value }: MovieProps) => {
   return (
     <div className="films">
       {films.map((film) => (
-        <div key={film.id}>
-          <div id="image-box">
-            <img src={urlImg + film.poster_path} alt="Foto não disponivel" />
+        <Link to={"/movie/" + film.id}>
+          <div key={film.id}>
+            <div id="image-box">
+              {film.poster_path ? (
+                <img
+                  src={urlImg + film.poster_path}
+                  alt="Foto não disponivel"
+                />
+              ) : (
+                <img src={notAvailable} width="300" height="450" alt="" />
+              )}
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

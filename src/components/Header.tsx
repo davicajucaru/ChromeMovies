@@ -1,4 +1,5 @@
 import { Input } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 import "../styles/header.css";
 
@@ -14,8 +15,8 @@ const Header = ({ value, setValue }: HeaderProps) => {
         <h1>ChromeMovies</h1>
       </div>
       <div className="header-links">
-        <a href="/">Home</a>
-        <a href="/">Favorites</a>
+        <Link to="/">Home</Link>
+        <Link to="/favorites">Favorites</Link>
       </div>
       <div className="header-input">
         <Input

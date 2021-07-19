@@ -3,6 +3,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
+  margin: auto;
   /* row-gap: 30px; */
   gap: 30px 20px;
 }
